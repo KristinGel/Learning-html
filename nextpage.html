@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet">
+    <title>Learning</title>
+
+    <style>
+body {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('images/Artboard 1 copy.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+    position: relative;
+}
+
+.image-book {
+    width: 480px;
+    height: 300px;
+    background: url('images/book-flip.gif') no-repeat center bottom/cover;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.object {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    position: absolute;
+    cursor: pointer;
+}
+#closed-plane1 {
+    left: 250px;
+    bottom: 250px;
+    background-image: url('images/plane-knowledge.png'); /* Add the path to your off light image */
+    transition: all 0.3s ease;
+}
+
+#closed-plane2 {
+    left: 450px;
+    bottom: 220px;
+    background-image: url('images/plane-education.png'); /* Add the path to your off light image */
+    transition: all 0.3s ease;
+}
+
+#closed-plane3 {
+    left: 1040px;
+    bottom: 220px;
+    background-image: url('images/plane-understanding.png'); /* Add the path to your off light image */
+    transition: all 0.3s ease;
+}
+
+#closed-plane4 {
+    left: 1300px;
+    bottom: 220px;
+    background-image: url('images/plane-comprehension.png'); /* Add the path to your off light image */
+    transition: all 0.3s ease;
+}
+
+#closed-plane5 {
+    left: 200px;
+    bottom: 50px;
+    background-image: url('images/plane-study.png'); /* Add the path to your off light image */
+    transition: all 0.3s ease;
+}
+
+#closed-plane6 {
+    left: 400px;
+    bottom: 10px;
+    background-image: url('images/plane-training.png'); /* Add the path to your off light image */
+    transition: all 0.3s ease;
+    transform: rotate(-30deg);
+}
+
+#closed-plane7 {
+    left: 550px;
+    bottom: 70px;
+    background-image: url('images/plane-experience.png'); /* Add the path to your off light image */
+    transition: all 0.3s ease;
+    transform: rotate(-30deg);
+}
+
+#closed-plane8 {
+    left: 650px;
+    bottom: -50px;
+    background-image: url('images/plane-skill.png'); /* Add the path to your off light image */
+    transition: all 0.3s ease;
+    transform: rotate(-30deg);
+}
+
+#closed-plane9 {
+    left: 850px;
+    bottom: 80px;    
+    background-image: url('images/plane-curiosity.png'); /* Add the path to your off light image */
+    transition: all 0.3s ease;
+    transform: rotate(30deg);
+}
+
+#closed-plane10 {
+    left: 1100px;
+    bottom: -30px;
+    background-image: url('images/plane-exploration.png'); /* Add the path to your off light image */
+    transition: all 0.3s ease;
+    transform: rotate(30deg);
+}
+
+#closed-plane11 {
+    left: 1200px;
+    bottom: 80px;
+    background-image: url('images/plane-discovery.png'); /* Add the path to your off light image */
+    transition: all 0.3s ease;
+}
+
+#closed-plane12 {
+    left: 950px;
+    bottom: -180px;
+    background-image: url('images/plane-adaptation.png'); /* Add the path to your off light image */
+    transition: all 0.3s ease;
+    transform: rotate(45deg);
+}
+.enlarged {
+    width: 450px;
+    height: 450px;
+    z-index:1;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="object" id="closed-plane1"></div>
+        <div class="object" id="closed-plane2"></div>
+        <div class="object" id="closed-plane3"></div>
+        <div class="object" id="closed-plane4"></div>
+        <div class="object" id="closed-plane5"></div>
+        <div class="object" id="closed-plane6"></div>
+        <div class="object" id="closed-plane7"></div>
+        <div class="object" id="closed-plane8"></div>
+        <div class="object" id="closed-plane9"></div>
+        <div class="object" id="closed-plane10"></div>
+        <div class="object" id="closed-plane11"></div>
+        <div class="object" id="closed-plane12"></div>
+        <!--<div class="object" id="off-light"></div>
+        <div class="object" id="closed-book"></div>
+        <div class="object" id="off-calculator"></div>-->
+    </div>
+    <div class="container-bottom">
+        <div class="image-book"></div>
+    </div>
+
+    <script>
+        const closedPlane1 = document.getElementById('closed-plane1');
+        const closedPlane2 = document.getElementById('closed-plane2');
+        const closedPlane3 = document.getElementById('closed-plane3');
+        const closedPlane4 = document.getElementById('closed-plane4');
+        const closedPlane5 = document.getElementById('closed-plane5');
+        const closedPlane6 = document.getElementById('closed-plane6');
+        const closedPlane7 = document.getElementById('closed-plane7');
+        const closedPlane8 = document.getElementById('closed-plane8');
+        const closedPlane9 = document.getElementById('closed-plane9');
+        const closedPlane10 = document.getElementById('closed-plane10');
+        const closedPlane11 = document.getElementById('closed-plane11');
+        const closedPlane12 = document.getElementById('closed-plane12');
+
+        closedPlane1.addEventListener('mouseover', () => {
+            closedPlane1.style.backgroundImage = "url('images/label-knowledge.png')"; /* Add the path to your open book image */
+            closedPlane1.classList.add('enlarged');closedPlane1.style.bottom = "-100px";closedPlane1.style.left = "150px";
+                    });
+        closedPlane1.addEventListener('mouseout', () => {
+            closedPlane1.style.backgroundImage = "url('images/plane-knowledge.png')"; /* Add the path to your closed book image */
+            closedPlane1.classList.remove('enlarged');closedPlane1.style.bottom = "250px";closedPlane1.style.left = "250px";
+        });
+
+        closedPlane2.addEventListener('mouseover', () => {
+            closedPlane2.style.backgroundImage = "url('images/label-education.png')"; /* Add the path to your open book image */
+            closedPlane2.classList.add('enlarged');closedPlane2.style.bottom = "-100px";closedPlane2.style.left = "150px";
+        });
+        closedPlane2.addEventListener('mouseout', () => {
+            closedPlane2.style.backgroundImage = "url('images/plane-education.png')"; /* Add the path to your closed book image */
+            closedPlane2.classList.remove('enlarged');closedPlane2.style.bottom = "220px";closedPlane2.style.left = "450px";
+        });
+
+        closedPlane3.addEventListener('mouseover', () => {
+            closedPlane3.style.backgroundImage = "url('images/label-understanding.png')"; /* Add the path to your open book image */
+            closedPlane3.classList.add('enlarged');closedPlane3.style.bottom = "-100px";closedPlane3.style.left = "950px";
+        });
+        closedPlane3.addEventListener('mouseout', () => {
+            closedPlane3.style.backgroundImage = "url('images/plane-understanding.png')"; /* Add the path to your closed book image */
+            closedPlane3.classList.remove('enlarged');closedPlane3.style.bottom = "220px";closedPlane3.style.left = "1040px";
+        });
+
+        closedPlane4.addEventListener('mouseover', () => {
+            closedPlane4.style.backgroundImage = "url('images/label-comprehension.png')"; /* Add the path to your open book image */
+            closedPlane4.classList.add('enlarged');closedPlane4.style.bottom = "-100px";closedPlane4.style.left = "950px";
+        });
+        closedPlane4.addEventListener('mouseout', () => {
+            closedPlane4.style.backgroundImage = "url('images/plane-comprehension.png')"; /* Add the path to your closed book image */
+            closedPlane4.classList.remove('enlarged');closedPlane4.style.bottom = "220px";closedPlane4.style.left = "1300px";
+        });
+
+        closedPlane5.addEventListener('mouseover', () => {
+            closedPlane5.style.backgroundImage = "url('images/label-study.png')"; /* Add the path to your open book image */
+            closedPlane5.classList.add('enlarged');closedPlane5.style.bottom = "-200px";closedPlane5.style.left = "50px";
+        });
+        closedPlane5.addEventListener('mouseout', () => {
+            closedPlane5.style.backgroundImage = "url('images/plane-study.png')"; /* Add the path to your closed book image */
+            closedPlane5.classList.remove('enlarged');closedPlane5.style.bottom = "50px";closedPlane5.style.left = "200px";
+        });
+
+        closedPlane6.addEventListener('mouseover', () => {
+            closedPlane6.style.backgroundImage = "url('images/label-training.png')"; /* Add the path to your open book image */
+            closedPlane6.classList.add('enlarged');closedPlane6.style.bottom = "-200px";closedPlane6.style.left = "150px";closedPlane6.style.transform = "rotate(0deg)";
+        });
+        closedPlane6.addEventListener('mouseout', () => {
+            closedPlane6.style.backgroundImage = "url('images/plane-training.png')"; /* Add the path to your closed book image */
+            closedPlane6.classList.remove('enlarged');closedPlane6.style.bottom = "10px";closedPlane6.style.left = "400px";closedPlane6.style.transform = "rotate(-30deg)";
+        });
+
+        closedPlane7.addEventListener('mouseover', () => {
+            closedPlane7.style.backgroundImage = "url('images/label-experience.png')"; /* Add the path to your open book image */
+            closedPlane7.classList.add('enlarged');closedPlane7.style.bottom = "-200px";closedPlane7.style.left = "350px";closedPlane7.style.transform = "rotate(0deg)";
+        });
+        closedPlane7.addEventListener('mouseout', () => {
+            closedPlane7.style.backgroundImage = "url('images/plane-experience.png')"; /* Add the path to your closed book image */
+            closedPlane7.classList.remove('enlarged');closedPlane7.style.bottom = "70px";closedPlane7.style.left = "550px";closedPlane7.style.transform = "rotate(-30deg)";
+        });
+
+        closedPlane8.addEventListener('mouseover', () => {
+            closedPlane8.style.backgroundImage = "url('images/label-skill.png')"; /* Add the path to your open book image */
+            closedPlane8.classList.add('enlarged');closedPlane8.style.bottom = "-200px";closedPlane8.style.left = "450px";closedPlane8.style.transform = "rotate(0deg)";
+        });
+        closedPlane8.addEventListener('mouseout', () => {
+            closedPlane8.style.backgroundImage = "url('images/plane-skill.png')"; /* Add the path to your closed book image */
+            closedPlane8.classList.remove('enlarged');closedPlane8.style.bottom = "-50px";closedPlane8.style.left = "650px";closedPlane8.style.transform = "rotate(-30deg)";
+        })
+
+        closedPlane9.addEventListener('mouseover', () => {
+            closedPlane9.style.backgroundImage = "url('images/label-curiosity.png')"; /* Add the path to your open book image */
+            closedPlane9.classList.add('enlarged');closedPlane9.style.bottom = "-200px"; closedPlane9.style.left = "700px";closedPlane9.style.transform = "rotate(0deg)";
+        });
+        closedPlane9.addEventListener('mouseout', () => {
+            closedPlane9.style.backgroundImage = "url('images/plane-curiosity.png')"; /* Add the path to your closed book image */
+            closedPlane9.classList.remove('enlarged');closedPlane9.style.bottom = "80px";closedPlane9.style.left = "850px";closedPlane9.style.transform = "rotate(30deg)";
+        });
+
+        closedPlane10.addEventListener('mouseover', () => {
+            closedPlane10.style.backgroundImage = "url('images/label-exploration.png')"; /* Add the path to your open book image */
+            closedPlane10.classList.add('enlarged');closedPlane10.style.bottom = "-200px";closedPlane10.style.left = "900px";closedPlane10.style.transform = "rotate(0deg)";
+        });
+        closedPlane10.addEventListener('mouseout', () => {
+            closedPlane10.style.backgroundImage = "url('images/plane-exploration.png')"; /* Add the path to your closed book image */
+            closedPlane10.classList.remove('enlarged');closedPlane10.style.bottom = "-30px";closedPlane10.style.left = "1100px";closedPlane10.style.transform = "rotate(30deg)";
+        });
+
+        closedPlane11.addEventListener('mouseover', () => {
+            closedPlane11.style.backgroundImage = "url('images/label-discovery.png')"; /* Add the path to your open book image */
+            closedPlane11.classList.add('enlarged');closedPlane11.style.bottom = "-200px";closedPlane11.style.left = "900px"
+        });
+        closedPlane11.addEventListener('mouseout', () => {
+            closedPlane11.style.backgroundImage = "url('images/plane-discovery.png')"; /* Add the path to your closed book image */
+            closedPlane11.classList.remove('enlarged');closedPlane11.style.bottom = "80px";closedPlane11.style.left = "1200px"
+        });
+
+        closedPlane12.addEventListener('mouseover', () => {
+            closedPlane12.style.backgroundImage = "url('images/label-adaptation.png')"; /* Add the path to your open book image */
+            closedPlane12.classList.add('enlarged');closedPlane12.style.transform = "rotate(0deg)";closedPlane12.style.left = "800px";
+        });
+        closedPlane12.addEventListener('mouseout', () => {
+            closedPlane12.style.backgroundImage = "url('images/plane-adaptation.png')"; /* Add the path to your closed book image */
+            closedPlane12.classList.remove('enlarged');closedPlane12.style.transform = "rotate(45deg)";closedPlane12.style.left = "950px";
+        });
+
+    </script>
+
+
+</body>
+
+</html>

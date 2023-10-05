@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Box Game</title>
+    <link rel="stylesheet">
+    <style>
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.objects {
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-size: cover;
+    margin: 10px;
+}
+
+.box {
+    width: 400px;
+    height: 400px;
+    background-image: url('images/box.png');
+    background-position: center;
+    background-size: cover;
+    margin: 10px;
+}
+#book {
+    left: 50px;
+    background-image: url('images/book-1.png'); /* Add the path to your closed book image */
+}
+#light {
+    left: 50px;
+    background-image: url('images/lightbulb-1.png'); /* Add the path to your closed book image */
+}
+#calculator {
+    left: 50px;
+    background-image: url('images/calculator-1.png'); /* Add the path to your closed book image */
+}
+
+    </style>
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="objects" id="light" draggable="true"></div>
+        <div class="objects" id="book" draggable="true"></div>
+        <div class="objects" id="calculator" draggable="true"></div>
+        <div class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+    <script>
+        let objectsInBox = 0;
+
+function allowDrop(event) {
+    event.preventDefault();
+}
+
+function drop(event) {
+    event.preventDefault();
+    let draggedObject = event.dataTransfer.getData("text");
+    let droppedBox = event.target;
+
+    if (draggedObject && droppedBox.classList.contains('box')) {
+        let draggedElement = document.getElementById(draggedObject);
+        if (!draggedElement.classList.contains('in-box')) {
+            draggedElement.classList.add('in-box');
+            droppedBox.appendChild(draggedElement);
+            objectsInBox++;
+
+            if (objectsInBox === 3) {
+                window.location.href = "nextPage.html";
+            }
+        }
+    }
+}
+
+document.addEventListener("dragstart", function (event) {
+    event.dataTransfer.setData("text", event.target.id);
+});
+
+    </script>
+</body>
+
+
+</html>
