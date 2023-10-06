@@ -127,9 +127,40 @@ body {
     transition: all 0.3s ease;
     transform: rotate(45deg);
 }
+.cloud {
+    width: 400px;
+    height: 150px;
+    background-size: cover;
+    position: absolute;
+    cursor: pointer;
+}
+
+#closed-cloud1 {
+    left: 150px;
+    bottom: 0px;
+    background-image: url('images/cloud-name-1.png'); /* Add the path to your off light image */
+    transition: all 0.3s ease;
+    position: absolute;
+    bottom: 0;
+}
+
+#closed-cloud2 {
+    left: 850px;
+    bottom: 0px;
+    background-image: url('images/cloud-ref-1.png'); /* Add the path to your off light image */
+    transition: all 0.3s ease;
+    position: absolute;
+    bottom: 0;
+    z-index: 0;
+}
 .enlarged {
     width: 450px;
     height: 450px;
+    z-index:1;
+}
+.enlarged-cloud {
+    width: 550px;
+    height: 350px;
     z-index:1;
 }
 
@@ -156,7 +187,9 @@ body {
         <div class="object" id="off-calculator"></div>-->
     </div>
     <div class="container-bottom">
+        <div class="cloud" id="closed-cloud1"></div>
         <div class="image-book"></div>
+        <div class="cloud" id="closed-cloud2"></div>
     </div>
 
     <script>
@@ -172,6 +205,8 @@ body {
         const closedPlane10 = document.getElementById('closed-plane10');
         const closedPlane11 = document.getElementById('closed-plane11');
         const closedPlane12 = document.getElementById('closed-plane12');
+        const closedcloud1 = document.getElementById('closed-cloud1');
+        const closedcloud2 = document.getElementById('closed-cloud2');
 
         closedPlane1.addEventListener('mouseover', () => {
             closedPlane1.style.backgroundImage = "url('images/label-knowledge.png')"; /* Add the path to your open book image */
@@ -279,6 +314,24 @@ body {
         closedPlane12.addEventListener('mouseout', () => {
             closedPlane12.style.backgroundImage = "url('images/plane-adaptation.png')"; /* Add the path to your closed book image */
             closedPlane12.classList.remove('enlarged');closedPlane12.style.transform = "rotate(45deg)";closedPlane12.style.left = "950px";
+        });
+
+        closedcloud1.addEventListener('mouseover', () => {
+            closedcloud1.style.backgroundImage = "url('images/cloud-name-2.png')"; /* Add the path to your open book image */
+            closedcloud1.classList.add('enlarged-cloud');closedcloud1.style.left = "50px";
+        });
+        closedcloud1.addEventListener('mouseout', () => {
+            closedcloud1.style.backgroundImage = "url('images/cloud-name-1.png')"; /* Add the path to your closed book image */
+            closedcloud1.classList.remove('enlarged-cloud');closedcloud1.style.left = "150px";
+        });
+
+        closedcloud2.addEventListener('mouseover', () => {
+            closedcloud2.style.backgroundImage = "url('images/cloud-ref-2.png')"; /* Add the path to your open book image */
+            closedcloud2.classList.add('enlarged-cloud');closedcloud2.style.left = "750px";
+        });
+        closedcloud2.addEventListener('mouseout', () => {
+            closedcloud2.style.backgroundImage = "url('images/cloud-ref-1.png')"; /* Add the path to your closed book image */
+            closedcloud2.classList.remove('enlarged-cloud');closedcloud2.style.left = "850px";
         });
 
     </script>
