@@ -130,14 +130,14 @@ body {
 }
 
 .cloud {
-    width: 400px;
-    height: 150px;
     background-size: cover;
     position: absolute;
     cursor: pointer;
 }
 
 #closed-cloud1 {
+    width: 450px;
+    height: 150px;
     left: 150px;
     bottom: 0px;
     background-image: url('images/cloud-name-1.png'); /* Add the path to your off light image */
@@ -147,6 +147,8 @@ body {
 }
 
 #closed-cloud2 {
+    width: 450px;
+    height: 150px;
     left: 850px;
     bottom: 0px;
     background-image: url('images/cloud-ref-1.png'); /* Add the path to your off light image */
@@ -320,20 +322,20 @@ body {
 
         closedcloud1.addEventListener('mouseover', () => {
             closedcloud1.style.backgroundImage = "url('images/cloud-name-2.png')"; /* Add the path to your open book image */
-            closedcloud1.classList.add('enlarged-cloud');closedcloud1.style.left = "50px";
+            closedcloud1.classList.add('enlarged-cloud');closedcloud1.style.left = "50px";closedcloud1.style.height = "300px";closedcloud1.style.width = "600px";
         });
         closedcloud1.addEventListener('mouseout', () => {
             closedcloud1.style.backgroundImage = "url('images/cloud-name-1.png')"; /* Add the path to your closed book image */
-            closedcloud1.classList.remove('enlarged-cloud');closedcloud1.style.left = "150px";
+            closedcloud1.classList.remove('enlarged-cloud');closedcloud1.style.left = "150px";closedcloud1.style.height = "150px";closedcloud1.style.width = "450px";
         });
 
         closedcloud2.addEventListener('mouseover', () => {
             closedcloud2.style.backgroundImage = "url('images/cloud-ref-2.png')"; /* Add the path to your open book image */
-            closedcloud2.classList.add('enlarged-cloud');closedcloud2.style.left = "750px";closedcloud2.style.zIndex = "1";
+            closedcloud2.classList.add('enlarged-cloud');closedcloud2.style.left = "750px";closedcloud2.style.zIndex = "1";closedcloud2.style.height = "450px";closedcloud2.style.width = "700px";
         });
         closedcloud2.addEventListener('mouseout', () => {
             closedcloud2.style.backgroundImage = "url('images/cloud-ref-1.png')"; /* Add the path to your closed book image */
-            closedcloud2.classList.remove('enlarged-cloud');closedcloud2.style.left = "850px";closedcloud2.style.zIndex = "0";
+            closedcloud2.classList.remove('enlarged-cloud');closedcloud2.style.left = "850px";closedcloud2.style.zIndex = "0";closedcloud2.style.height = "150px";closedcloud2.style.width = "450px";
         });
 
     </script>
