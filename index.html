@@ -30,6 +30,7 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1;
 }
 .object {
     width: 100px;
@@ -327,12 +328,11 @@ body {
 
         closedcloud2.addEventListener('mouseover', () => {
             closedcloud2.style.backgroundImage = "url('images/cloud-ref-2.png')"; /* Add the path to your open book image */
-            closedcloud2.classList.add('enlarged-cloud');closedcloud2.style.left = "750px";
+            closedcloud2.classList.add('enlarged-cloud');closedcloud2.style.left = "750px";closedcloud2.style.zIndex = "1";
         });
         closedcloud2.addEventListener('mouseout', () => {
             closedcloud2.style.backgroundImage = "url('images/cloud-ref-1.png')"; /* Add the path to your closed book image */
-            closedcloud2.classList.remove('enlarged-cloud');closedcloud2.style.left = "850px";
-        });
+            closedcloud2.classList.remove('enlarged-cloud');closedcloud2.style.left = "850px";closedcloud2.style.zIndex = "0";
 
     </script>
 
